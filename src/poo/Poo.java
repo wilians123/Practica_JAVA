@@ -21,25 +21,18 @@ public class Poo {
        Scanner sc= new Scanner(System.in);
         
   
-        
-       calculadora calcu1 = new calculadora(); //PARA SUMAR
-       calculadora calcu2 = new calculadora(); //PARA RESTAR
-       calculadora calcu3 = new calculadora(); //PARA MULTIPLICAR
-       calculadora calcu4 = new calculadora(); //PARA DIVIDIR
-       calculadora calcu5 = new calculadora(); //PARA RAIZ
-       calculadora calcu6 = new calculadora(); //PARA NUMERO PRIMO
-       
-       
-       calculadoraespecial calcula1 = new calculadoraespecial(); //PARA NUMERO PAR
-       calculadoraespecial calcula2 = new calculadoraespecial(); //PARA NUMERO IMPAR
-       calculadoraespecial calcula3 = new calculadoraespecial(); //PARA FACTORIAL 
-       calculadoraespecial calcula4 = new calculadoraespecial(); //PARA CODIGO ASCI DE UN NUMERO
-       calculadoraespecial calcula5 = new calculadoraespecial(); //PARA PROMEDIO DE DOS NUMERO       
+    /*
+            YA NO ES NECESARIO CREAR UN OBJETO PARA CADA OPERACION, YA QUE CALCULADORA HA HEREDADO LAS FUNCIONES DE 
+            CALCULADORAESPECIAL, TODAS Y CADA UNA DE LAS FUNCIONES PUEDEN SER LLAMDAS DIRECTAMENTE DESDE CALCULADORA
+    */
        
        
        while(!salir){
            System.out.println("");
-           System.out.println("=======================");
+           System.out.println("============================");
+           System.out.println("BIENVENIDO A MI CALCULADORA");
+           System.out.println("============================");
+           System.out.println("");
            System.out.println("1. Sumar");
            System.out.println("2. Restar");
            System.out.println("3. Multiplicar");
@@ -53,7 +46,7 @@ public class Poo {
            System.out.println("11. Calcular el promedio de dos notas");
            System.out.println("12 Salir");
            System.out.println("=======================");
-           System.out.println("Selecciona una opcion");
+           System.out.println("Selecciona una opcion:");
            opcion = sn.nextInt();
       
             switch(opcion){
@@ -65,7 +58,7 @@ public class Poo {
         
                    System.out.println("Ingrese el primer segundo a sumar:");
                    int sN=sc.nextInt();
-                   System.out.println("El resultado de la suma es = " + calcu1.sumar(pN, sN));
+                   System.out.println("El resultado de la suma es = " + calculadora.sumar(pN, sN));
                    break;
                    
                    
@@ -76,7 +69,7 @@ public class Poo {
         
                    System.out.println("Ingrese el primer segundo a restar:");
                    int sN1=sc.nextInt();
-                   System.out.println("El resultado de la resta es = " +calcu2.restar(pN1, sN1));
+                   System.out.println("El resultado de la resta es = " +calculadora.restar(pN1, sN1));
                    break;
                    
                    
@@ -88,7 +81,7 @@ public class Poo {
                    System.out.println("Ingrese el primer segundo a multiplicar:");
                    int sN2=sc.nextInt();
                    
-                   System.out.println("El resultado de la multiplicacion es = " +calcu3.multiplicar(pN2, sN2));
+                   System.out.println("El resultado de la multiplicacion es = " +calculadora.multiplicar(pN2, sN2));
                    break;
                    
                    
@@ -100,7 +93,7 @@ public class Poo {
                    System.out.println("Ingrese el primer segundo a dividir:");
                    int sN3=sc.nextInt();
                    
-                   System.out.println("El resultado de la division es = " +calcu4.dividir(pN3, sN3));
+                   System.out.println("El resultado de la division es = " +calculadora.dividir(pN3, sN3));
                     break;
                     
                     
@@ -108,7 +101,7 @@ public class Poo {
                 case 5:
                     System.out.println("Ingrese un numero para saber su raiz:");
                     int numero=sc.nextInt();
-                    System.out.println("El resultado de la raiz cuadrada es = " +calcu5.raizCuadrada(numero));
+                    System.out.println("El resultado de la raiz cuadrada es = " +calculadora.raizCuadrada(numero));
                     break;
                     
                     
@@ -117,7 +110,7 @@ public class Poo {
                     System.out.println("Ingrese el numero para saber si es primo o no:");
                     int numeroBuscado=sc.nextInt();
    
-                    System.out.println("Es primo? = " +calcu6.esPrimo(numeroBuscado));
+                    System.out.println("Es primo? = " +calculadora.esPrimo(numeroBuscado));
                     break;
                     
                     
@@ -126,7 +119,7 @@ public class Poo {
                     System.out.println("Ingrese el numero para saber si es par o no:");
                     int primerNumero=sc.nextInt();
    
-                    System.out.println("Es par? = " +calcula1.espar(primerNumero));
+                    System.out.println("Es par? = " +calculadora.espar(primerNumero));
                     break;
                     
                     
@@ -135,7 +128,7 @@ public class Poo {
                     System.out.println("Ingrese el numero para saber si es impar o no:");
                     int primerN=sc.nextInt();
    
-                    System.out.println("Es impar? = " +calcula2.esimpar(primerN));
+                    System.out.println("Es impar? = " +calculadora.esimpar(primerN));
                     break;
                     
                     
@@ -144,7 +137,7 @@ public class Poo {
                     System.out.println("Ingrese el numero para saber su factorial:");
                     int primerN2=sc.nextInt();
    
-                    System.out.println("El factorial es = " +calcula3.factorial(primerN2));
+                    System.out.println("El factorial es = " +calculadora.factorial(primerN2));
                     break;
                     
                     
@@ -153,7 +146,7 @@ public class Poo {
                     System.out.println("Ingrese el numero para saber su codigo asci:");
                     char caracter=(char) sc.nextInt();
    
-                    System.out.println("El codigo asci del numero que ingreso es = " +calcula4.asci(caracter));
+                    System.out.println("El codigo asci del numero que ingreso es: " +calculadora.asci(caracter));
                     break;
                     
                     
@@ -165,7 +158,7 @@ public class Poo {
                    System.out.println("Ingrese la segundo nota:");
                    int segundoN4=sc.nextInt();
                    
-                   System.out.println("El promedio de sus notas es = " +calcula5.media(primerN4, segundoN4));
+                   System.out.println("El promedio de sus notas es = " +calculadora.media(primerN4, segundoN4));
                     break;
                     
                     //SALIDA

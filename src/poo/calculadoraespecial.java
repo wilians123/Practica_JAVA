@@ -8,7 +8,7 @@ package poo;
  *
  * @author HUAWEI
  */
-public class calculadoraespecial {
+public class calculadoraespecial{
     
      public boolean espar(int primerNumero){
    

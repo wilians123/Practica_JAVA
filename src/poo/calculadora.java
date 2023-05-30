@@ -8,7 +8,9 @@ package poo;
  *
  * @author HUAWEI
  */
-public class calculadora {    
+
+//UTILIZANDO LA PALABRA RESERVADA EXTENDS, AHORA LA CALCULADORA HA HEREDADO LAS FUNCIONES DE LA CALCULADORA ESPECIAL.
+public class calculadora extends calculadoraespecial {    
     //Atributos de Clase, pueden ser Publicos, Privados y Protegidos (en herencia)
     public String tipoCalculadora;
     public String color;
@@ -28,6 +30,7 @@ public class calculadora {
     //Constructor vacio
     public calculadora(){
     }
+    
     
     //Are de declaración de metodos
     //en clase hemos dicho "funciones" anteriormente, pero en POO son metodos.
